@@ -12,7 +12,6 @@ type Whal3sConnectKitButtonProps = {
 const Whal3sConnectKitButton = ({onClaim, isClaimed}:Whal3sConnectKitButtonProps) => {
   const connectedRef = useRef<HTMLDivElement>(null);
   const connectRef = useRef<HTMLDivElement>(null);
-  console.log('Whal3sConnectKitButton', {onClaim, isClaimed})
 
   return (
     <ConnectKitButton.Custom>
@@ -22,7 +21,6 @@ const Whal3sConnectKitButton = ({onClaim, isClaimed}:Whal3sConnectKitButtonProps
           truncatedAddress
         }) => {
 
-        console.log('Whal3sConnectKitButton deep', {isConnected, show, truncatedAddress})
         const nodeRef = isConnected ? connectedRef : connectRef;
 
         return (
@@ -31,9 +29,7 @@ const Whal3sConnectKitButton = ({onClaim, isClaimed}:Whal3sConnectKitButtonProps
               key={isConnected ? "is-connected" : "connect"}
               nodeRef={nodeRef}
               addEndListener={(done:any) => {
-                console.log('Whal3sConnectKitButton addEndListener', {done})
                 if (nodeRef.current) {
-                  console.log('Whal3sConnectKitButton addEndListener 2')
                   nodeRef.current.addEventListener("transitionend", done, false);
                 }
               }}
@@ -42,25 +38,25 @@ const Whal3sConnectKitButton = ({onClaim, isClaimed}:Whal3sConnectKitButtonProps
 
               <div ref={nodeRef}>
                 {isConnected ? (<div
-                  className={"mt-6 grid grid-cols-2 gap-5"}>
+                  className={"whal3s-mt-6 whal3s-grid whal3s-grid-cols-2 whal3s-gap-5"}>
                   <button
                     onClick={onClaim}
                     type="button"
                     className={classNames(
-                      isClaimed ? 'bg-teal-500 text-white hover:bg-teal-400 focus:ring-teal-500' : 'bg-black text-white hover:bg-gray-800 focus:ring-gray-900',
-                      'flex w-full items-center justify-center rounded-md border border-transparent px-4 py-2 focus:outline-none focus:ring-2  focus:ring-offset-2'
+                      isClaimed ? 'whal3s-bg-teal-500 whal3s-text-white hover:whal3s-bg-teal-400 focus:ring-teal-500' : 'whal3s-bg-black whal3s-text-white hover:whal3s-bg-gray-800 focus:whal3s-ring-gray-900',
+                      'whal3s-flex whal3s-w-full whal3s-items-center whal3s-justify-center whal3s-rounded-md whal3s-border whal3s-border-transparent whal3s-px-4 whal3s-py-2 focus:whal3s-outline-none focus:whal3s-ring-2  focus:whal3s-ring-offset-2'
                     )}
                   >
-                    <span className="sr-only">Claim with Whal3s</span>
+                    <span className="whal3s-sr-only">Claim with Whal3s</span>
                     <img src={'https://whal3s-assets.s3.eu-central-1.amazonaws.com/logos/whal3s_slim.png'} alt={'Whal3s logo'}
-                         className={'h-6 w-auto mr-2.5'}/>
+                         className={'whal3s-h-6 whal3s-w-auto whal3s-mr-2.5'}/>
                     <span>{isClaimed ? 'Rebate applied' : 'Claim rebate'}</span>
                   </button>
                   <button
                     type="button"
                     onClick={show}
-                    // className="w-full rounded-md border border-transparent bg-whal3s-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-whal3s-700 focus:outline-none focus:ring-2 focus:ring-whal3s-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500"
-                    className="w-full rounded-md bg-whal3s-50 px-4 py-2 text-sm font-semibold text-whal3s-600 shadow-sm hover:bg-whal3s-100"
+                    // className="whal3s-w-full whal3s-rounded-md whal3s-border whal3s-border-transparent whal3s-bg-whal3s-600 whal3s-px-4 whal3s-py-2 whal3s-text-sm whal3s-font-medium whal3s-text-white whal3s-shadow-sm hover:whal3s-bg-whal3s-700 focus:whal3s-outline-none focus:whal3s-ring-2 focus:ring-whal3s-500 focus:whal3s-ring-offset-2 disabled:whal3s-cursor-not-allowed disabled:whal3s-bg-gray-100 disabled:whal3s-text-gray-500"
+                    className="whal3s-w-full whal3s-rounded-md whal3s-bg-whal3s-50 whal3s-px-4 whal3s-py-2 whal3s-text-sm whal3s-font-semibold text-whal3s-600 whal3s-shadow-sm hover:whal3s-bg-whal3s-100"
                   >
                     {truncatedAddress}
                   </button>
@@ -69,12 +65,12 @@ const Whal3sConnectKitButton = ({onClaim, isClaimed}:Whal3sConnectKitButtonProps
                   <button
                     onClick={show}
                     type="button"
-                    className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-4 py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+                    className="whal3s-mt-6 whal3s-flex whal3s-w-full whal3s-items-center whal3s-justify-center whal3s-rounded-md whal3s-border whal3s-border-transparent whal3s-bg-black whal3s-px-4 whal3s-py-2 whal3s-text-white hover:whal3s-bg-gray-800 focus:whal3s-outline-none focus:whal3s-ring-2 focus:whal3s-ring-gray-900 focus:whal3s-ring-offset-2"
                   >
                                                                         <span
-                                                                          className="sr-only">Claim with Whal3s</span>
+                                                                          className="whal3s-sr-only">Claim with Whal3s</span>
                     <img src={'https://whal3s-assets.s3.eu-central-1.amazonaws.com/logos/whal3s_slim.png'} alt={'Whal3s logo'}
-                         className={'h-6 w-auto mr-2.5'}/>
+                         className={'whal3s-h-6 whal3s-w-auto whal3s-mr-2.5'}/>
                     <span>Connect wallet to claim</span>
                   </button>
 

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.html', './src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
+  prefix: 'whal3s-',
   theme: {
     fontSize: {
       xs: ['0.75rem', {lineHeight: '1rem'}],
@@ -64,7 +65,7 @@ module.exports = {
         zinc: {
           950: '#0b0b0b'
         },
-        'whal3s': {
+        whal3s: {
           '50': '#edf0ff',
           '100': '#dee5ff',
           '200': '#c4cdff',

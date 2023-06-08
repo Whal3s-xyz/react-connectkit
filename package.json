@@ -1,6 +1,6 @@
 {
   "name": "@whal3s/react-connectkit",
-  "version": "1.0.12",
+  "version": "1.0.18",
   "description": "Whal3s Connect button to work with ConnectKit",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -9,8 +9,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
+  "exports": {
+    "import": "./lib/index.esm.js",
+    "require": "./lib/index.js"
+  },
   "np": {
-    "publish": false,
+    "publish": true,
     "tests": false
   },
   "keywords": [
