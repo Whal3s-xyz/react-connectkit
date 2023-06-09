@@ -1,6 +1,6 @@
 {
   "name": "@whal3s/react-connectkit",
-  "version": "1.0.18",
+  "version": "1.0.21",
   "description": "Whal3s Connect button to work with ConnectKit",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
