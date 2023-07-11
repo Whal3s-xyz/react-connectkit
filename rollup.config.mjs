@@ -35,7 +35,9 @@ export default [{
     commonjs(),
     typescript(),
     postcss({
-      extensions: ['.css']
+      // modules: true,
+      extract: true,
+      extensions: ['.css'],
     })
   ]
 }, {
